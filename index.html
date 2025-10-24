@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Ideas - Telugu & Global Vegetarian Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ Dinner Ideas</h1>
+            <p class="subtitle">Telugu & Global Lacto-Vegetarian Cuisine from Hyderabad</p>
+        </header>
+
+        <main>
+            <section class="filter-section">
+                <h2>What would you like tonight?</h2>
+                <div class="button-group">
+                    <button class="filter-btn active" data-filter="all">All Dishes</button>
+                    <button class="filter-btn" data-filter="telugu">Telugu Cuisine</button>
+                    <button class="filter-btn" data-filter="global">Global Cuisine</button>
+                    <button class="filter-btn" data-filter="quick">Quick & Easy</button>
+                </div>
+            </section>
+
+            <section class="random-section">
+                <button id="randomBtn" class="random-btn">🎲 Surprise Me!</button>
+                <div id="randomResult" class="random-result"></div>
+            </section>
+
+            <section class="dishes-section">
+                <div id="dishesContainer" class="dishes-grid">
+                    <!-- Dishes will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ for delicious vegetarian meals</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
