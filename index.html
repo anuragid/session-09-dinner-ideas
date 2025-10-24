@@ -3,42 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinner Ideas - Telugu & Global Vegetarian Cuisine</title>
+    <title>What's for Dinner?</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🍽️ Dinner Ideas</h1>
-            <p class="subtitle">Telugu & Global Lacto-Vegetarian Cuisine from Hyderabad</p>
+            <h1>What's for Dinner?</h1>
+            <p class="date" id="currentDate"></p>
         </header>
 
         <main>
-            <section class="filter-section">
-                <h2>What would you like tonight?</h2>
-                <div class="button-group">
-                    <button class="filter-btn active" data-filter="all">All Dishes</button>
-                    <button class="filter-btn" data-filter="telugu">Telugu Cuisine</button>
-                    <button class="filter-btn" data-filter="global">Global Cuisine</button>
-                    <button class="filter-btn" data-filter="quick">Quick & Easy</button>
+            <div class="cuisine-selector">
+                <h2>Pick a cuisine</h2>
+                <div class="cuisine-grid">
+                    <button class="cuisine-btn" data-cuisine="south-indian">
+                        <span class="cuisine-emoji">🌶️</span>
+                        <span class="cuisine-name">South Indian</span>
+                    </button>
+                    <button class="cuisine-btn" data-cuisine="north-indian">
+                        <span class="cuisine-emoji">🫓</span>
+                        <span class="cuisine-name">North Indian</span>
+                    </button>
+                    <button class="cuisine-btn" data-cuisine="biryani">
+                        <span class="cuisine-emoji">🍛</span>
+                        <span class="cuisine-name">Biryani</span>
+                    </button>
+                    <button class="cuisine-btn" data-cuisine="italian">
+                        <span class="cuisine-emoji">🍝</span>
+                        <span class="cuisine-name">Italian</span>
+                    </button>
+                    <button class="cuisine-btn" data-cuisine="mexican">
+                        <span class="cuisine-emoji">🌮</span>
+                        <span class="cuisine-name">Mexican</span>
+                    </button>
+                    <button class="cuisine-btn" data-cuisine="mediterranean">
+                        <span class="cuisine-emoji">🫒</span>
+                        <span class="cuisine-name">Mediterranean</span>
+                    </button>
+                    <button class="cuisine-btn" data-cuisine="sri-lankan">
+                        <span class="cuisine-emoji">🥥</span>
+                        <span class="cuisine-name">Sri Lankan</span>
+                    </button>
+                    <button class="cuisine-btn" data-cuisine="surprise">
+                        <span class="cuisine-emoji">🎲</span>
+                        <span class="cuisine-name">Surprise Me</span>
+                    </button>
                 </div>
-            </section>
+            </div>
 
-            <section class="random-section">
-                <button id="randomBtn" class="random-btn">🎲 Surprise Me!</button>
-                <div id="randomResult" class="random-result"></div>
-            </section>
-
-            <section class="dishes-section">
-                <div id="dishesContainer" class="dishes-grid">
-                    <!-- Dishes will be populated by JavaScript -->
+            <div class="card-section" id="cardSection">
+                <div class="card-container">
+                    <div class="dish-card" id="dishCard">
+                        <div class="card-content">
+                            <div class="dish-emoji" id="dishEmoji"></div>
+                            <h2 class="dish-name" id="dishName"></h2>
+                            <p class="dish-description" id="dishDescription"></p>
+                            <div class="dish-details">
+                                <span class="detail-item" id="dishTime"></span>
+                                <span class="detail-item" id="dishSpice"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
+                
+                <div class="card-actions">
+                    <button class="action-btn skip-btn" id="skipBtn">
+                        <span>✕</span>
+                        <span class="btn-label">Skip</span>
+                    </button>
+                    <button class="action-btn choose-btn" id="chooseBtn">
+                        <span>✓</span>
+                        <span class="btn-label">This One!</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="selected-dish" id="selectedDish">
+                <div class="selected-content">
+                    <h2>Tonight's Dinner</h2>
+                    <div class="selected-dish-info" id="selectedDishInfo"></div>
+                    <button class="restart-btn" id="restartBtn">Choose Something Else</button>
+                </div>
+            </div>
         </main>
-
-        <footer>
-            <p>Made with ❤️ for delicious vegetarian meals</p>
-        </footer>
     </div>
 
     <script src="script.js"></script>
